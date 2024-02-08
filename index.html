@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hindi Programming Language</title>
+    <script src="src/hindiWrapper.js"></script>
+</head>
+<body>
+    <textarea id="hindiCode" rows="10" cols="50">मुद्रित("नमस्ते, दुनिया!");</textarea><br>
+    <button onclick="runHindiCode()">Run Code</button><br>
+    <textarea id="output" rows="10" cols="50" readonly></textarea>
+
+    <script>
+        function runHindiCode() {
+            const code = document.getElementById('hindiCode').value;
+            translateAndRunHindiCode(code, output => {
+                document.getElementById('output').value = output;
+            });
+        }
+    </script>
+</body>
+</html>
